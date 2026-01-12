@@ -3,209 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zain Voice | Premium Link Bio</title>
+    <title>Zain Voice - Link in Bio</title>
+    <meta name="description" content="Heart-touching Stories | Romantic | Islamic & Educational Content">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
-
+        /* Islamic Storytelling Theme Colors */
+        :root {
+            --primary-teal: #0f766e;
+            --accent-gold: #f59e0b;
+            --warm-cream: #fefce8;
+        }
+        
+        /* Premium Background with Subtle Islamic Pattern */
         body {
-            font-family: 'Inter', sans-serif;
-            background: #080808;
-            background-image: radial-gradient(circle at top, #1a1a1a 0%, #080808 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, var(--warm-cream) 0%, #f0fdff 100%);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(15, 118, 110, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 20%);
             min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        .premium-text {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .gold-gradient-text {
-            background: linear-gradient(to right, #d4af37, #f7ef8a, #d4af37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .glass-card:hover {
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(197, 165, 114, 0.5);
-            box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.8);
-        }
-
-        /* Platform Accents */
-        .btn-youtube { border-left: 4px solid #FF0000; }
-        .btn-whatsapp { border-left: 4px solid #25D366; }
-        .btn-telegram { border-left: 4px solid #0088cc; }
-        .btn-instagram { border-left: 4px solid #E1306C; }
-        .btn-tiktok { border-left: 4px solid #ffffff; }
-        .btn-gmail { border-left: 4px solid #EA4335; }
-
-        .insta-gradient:hover {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-reveal {
-            animation: fadeInUp 0.8s ease forwards;
         }
         
-        .profile-container {
+        /* Button Hover Animation - Premium Lift Effect */
+        .btn-premium {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
-            width: 140px;
-            height: 140px;
-            margin: 0 auto;
+            overflow: hidden;
         }
         
-        .profile-ring {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, #d4af37, #f7ef8a, #d4af37);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        .btn-premium:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
-
-        .profile-img {
+        
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #0a0a0a;
-            background: #111;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+        
+        /* Profile Image Pulse Animation */
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 0 0 rgba(15, 118, 110, 0.4), 
+                            0 0 20px rgba(0,0,0,0.1); 
+            }
+            50% { 
+                box-shadow: 0 0 0 12px rgba(15, 118, 110, 0), 
+                            0 0 30px rgba(15, 118, 110, 0.2); 
+            }
+        }
+        
+        .profile-pulse {
+            animation: pulse-glow 3s infinite;
+            border: 4px solid white;
+        }
+        
+        /* Mic Icon Animation */
+        @keyframes mic-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .mic-icon {
+            animation: mic-pulse 2s infinite;
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-gold));
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 118, 110, 0.05);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-teal);
+            border-radius: 3px;
         }
     </style>
 </head>
-<body class="flex flex-col items-center px-6 py-12 md:py-16">
-
-    <!-- Profile Section -->
-    <div class="w-full max-w-md text-center mb-12 animate-reveal">
-        <div class="profile-container mb-6">
-            <div class="profile-ring">
-                <img src="https://i.ibb.co/tTz3whBm/1766493935733-1.jpg" alt="Zain Voice" class="profile-img">
-            </div>
-            <div class="absolute bottom-3 right-3 w-5 h-5 bg-green-500 border-4 border-[#0a0a0a] rounded-full z-10 animate-pulse shadow-lg"></div>
-        </div>
-
-        <h1 class="text-3xl md:text-4xl font-bold premium-text gold-gradient-text mb-3">
-            Zain Voice
-        </h1>
-        <p class="text-neutral-400 text-sm md:text-base font-light tracking-wide px-4 leading-relaxed max-w-xs mx-auto">
-            Heart-touching Stories | Romantic<span class="mx-1 text-neutral-700">|</span> Islamic & Educational Content
-        </p>
-    </div>
-
-    <!-- Links Section -->
-    <div class="w-full max-w-md space-y-4 animate-reveal" style="animation-delay: 0.2s;">
+<body class="flex items-center justify-center p-4">
+    <div class="w-full max-w-md mx-auto py-6">
         
-        <!-- YouTube -->
-        <a href="https://www.youtube.com/@ZainVoice2" target="_blank" 
-           class="glass-card btn-youtube flex items-center p-4 rounded-[24px] group transition-all">
-            <div class="w-12 h-12 bg-[#FF0000]/10 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-[#FF0000] transition-colors">
-                <i class="fa-brands fa-youtube text-2xl text-[#FF0000] group-hover:text-white"></i>
+        <!-- Profile Section -->
+        <div class="text-center mb-10">
+            <div class="relative inline-block">
+                <img src="https://i.ibb.co/tTz3whBm/1766493935733-1.jpg" 
+                     alt="Zain Voice Profile" 
+                     class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto shadow-lg profile-pulse">
+                <div class="absolute -bottom-2 -right-2 text-white rounded-full p-3 shadow-lg mic-icon">
+                    <i class="fas fa-microphone text-lg"></i>
+                </div>
             </div>
-            <div class="flex-1 text-left">
-                <span class="block text-[10px] font-bold text-neutral-500 uppercase tracking-[0.2em] mb-0.5">Official Channel</span>
-                <span class="text-lg font-semibold group-hover:text-white transition-colors">YouTube</span>
-            </div>
-            <i class="fa-solid fa-chevron-right text-neutral-700 group-hover:text-white transition-all transform group-hover:translate-x-1"></i>
-        </a>
-
-        <!-- WhatsApp -->
-        <a href="https://whatsapp.com/channel/0029Vb77iWV8PgsIA1T0DG42" target="_blank" 
-           class="glass-card btn-whatsapp flex items-center p-4 rounded-[24px] group transition-all">
-            <div class="w-12 h-12 bg-[#25D366]/10 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-[#25D366] transition-colors">
-                <i class="fa-brands fa-whatsapp text-2xl text-[#25D366] group-hover:text-white"></i>
-            </div>
-            <div class="flex-1 text-left">
-                <span class="block text-[10px] font-bold text-neutral-500 uppercase tracking-[0.2em] mb-0.5">WhatsApp</span>
-                <span class="text-lg font-semibold group-hover:text-white transition-colors">Story Updates</span>
-            </div>
-            <i class="fa-solid fa-chevron-right text-neutral-700 group-hover:text-white transition-all transform group-hover:translate-x-1"></i>
-        </a>
-
-        <!-- Telegram -->
-        <a href="https://t.me/ZainVoice" target="_blank" 
-           class="glass-card btn-telegram flex items-center p-4 rounded-[24px] group transition-all">
-            <div class="w-12 h-12 bg-[#0088cc]/10 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-[#0088cc] transition-colors">
-                <i class="fa-brands fa-telegram text-2xl text-[#0088cc] group-hover:text-white"></i>
-            </div>
-            <div class="flex-1 text-left">
-                <span class="block text-[10px] font-bold text-neutral-500 uppercase tracking-[0.2em] mb-0.5">Telegram</span>
-                <span class="text-lg font-semibold group-hover:text-white transition-colors">TG CHANNEL</span>
-            </div>
-            <i class="fa-solid fa-chevron-right text-neutral-700 group-hover:text-white transition-all transform group-hover:translate-x-1"></i>
-        </a>
-
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/muhammadzainvoice" target="_blank" 
-           class="glass-card btn-instagram flex items-center p-4 rounded-[24px] group transition-all insta-gradient">
-            <div class="w-12 h-12 bg-neutral-800 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-transparent transition-colors">
-                <i class="fa-brands fa-instagram text-2xl text-white"></i>
-            </div>
-            <div class="flex-1 text-left">
-                <span class="block text-[10px] font-bold text-neutral-500 group-hover:text-white/80 uppercase tracking-[0.2em] mb-0.5">Instagram</span>
-                <span class="text-lg font-semibold group-hover:text-white">Stories & Behind Scenes</span>
-            </div>
-            <i class="fa-solid fa-chevron-right text-neutral-700 group-hover:text-white transition-all transform group-hover:translate-x-1"></i>
-        </a>
-
-        <!-- TikTok -->
-        <a href="https://www.tiktok.com/@zainsharifabadi" target="_blank" 
-           class="glass-card btn-tiktok flex items-center p-4 rounded-[24px] group transition-all">
-            <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-white transition-colors">
-                <i class="fa-brands fa-tiktok text-2xl text-white group-hover:text-black"></i>
-            </div>
-            <div class="flex-1 text-left">
-                <span class="block text-[10px] font-bold text-neutral-500 uppercase tracking-[0.2em] mb-0.5">TikTok</span>
-                <span class="text-lg font-semibold group-hover:text-white transition-colors">Exclusive Short Films</span>
-            </div>
-            <i class="fa-solid fa-chevron-right text-neutral-700 group-hover:text-white transition-all transform group-hover:translate-x-1"></i>
-        </a>
-
-        <!-- Gmail (Clean Word Only) -->
-        <a href="mailto:muhammadzain70x70@gmail.com" 
-           class="glass-card btn-gmail flex items-center p-4 rounded-[24px] group transition-all">
-            <div class="w-12 h-12 bg-[#EA4335]/10 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-[#EA4335] transition-colors">
-                <i class="fa-solid fa-envelope text-2xl text-[#EA4335] group-hover:text-white"></i>
-            </div>
-            <div class="flex-1 text-left">
-                <span class="block text-[10px] font-bold text-neutral-500 uppercase tracking-[0.2em] mb-0.5">Contact</span>
-                <span class="text-lg font-semibold group-hover:text-white transition-colors">Gmail</span>
-            </div>
-            <i class="fa-solid fa-paper-plane text-neutral-700 group-hover:text-white transition-all transform group-hover:translate-x-1"></i>
-        </a>
-
-    </div>
-
-    <!-- Footer Content -->
-    <div class="mt-16 w-full max-w-md text-center animate-reveal" style="animation-delay: 0.4s;">
-        <div class="flex flex-wrap justify-center gap-2 mb-8 px-4">
-            <span class="text-[9px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-neutral-800 text-neutral-500 bg-neutral-900/40">Islamic</span>
-            <span class="text-[9px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-neutral-800 text-neutral-500 bg-neutral-900/40">Educational</span>
-            <span class="text-[9px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-neutral-800 text-neutral-500 bg-neutral-900/40">Romantic</span>
-            <span class="text-[9px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-neutral-800 text-neutral-500 bg-neutral-900/40">Short Films</span>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mt-5 mb-2 tracking-tight">
+                Zain Voice
+            </h1>
+            <p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed px-4">
+                Heart-touching Stories | Islamic & Educational Content
+            </p>
         </div>
         
-        <p class="text-[10px] text-neutral-600 font-bold tracking-[0.3em] uppercase opacity-60">
-            &copy; 2025 ZAIN VOICE <span class="mx-2">•</span> THE ART OF STORYTELLING
-        </p>
+        <!-- Links Section - Priority Order -->
+        <div class="space-y-4">
+            
+            <!-- YouTube - Top Priority -->
+            <a href="https://www.youtube.com/@ZainVoice2" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="btn-premium w-full flex items-center justify-center px-6 py-4 bg-red-600 hover:bg-red-700 text-white rounded-full font-semibold text-lg shadow-lg group">
+                <i class="fab fa-youtube mr-4 text-2xl group-hover:scale-110 transition-transform"></i>
+                <span class="flex-1 text-center">Watch on YouTube</span>
+                <i class="fas fa-external-link-alt text-xs opacity-70 ml-4"></i>
+            </a>
+            
+            <!-- WhatsApp Channel -->
+            <a href="https://whatsapp.com/channel/0029Vb77iWV8PgsIA1T0DG42" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="btn-premium w-full flex items-center justify-center px-6 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full font-semibold text-lg shadow-lg group">
+                <i class="fab fa-whatsapp mr-4 text-2xl group-hover:scale-110 transition-transform"></i>
+                <span class="flex-1 text-center">Join WhatsApp Channel</span>
+                <i class="fas fa-external-link-alt text-xs opacity-70 ml-4"></i>
+            </a>
+            
+            <!-- Telegram Channel -->
+            <a href="https://t.me/ZainVoice2" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="btn-premium w-full flex items-center justify-center px-6 py-4 bg-sky-500 hover:bg-sky-600 text-white rounded-full font-semibold text-lg shadow-lg group">
+                <i class="fab fa-telegram mr-4 text-2xl group-hover:scale-110 transition-transform"></i>
+                <span class="flex-1 text-center">Join Telegram Channel</span>
+                <i class="fas fa-external-link-alt text-xs opacity-70 ml-4"></i>
+            </a>
+            
+            <!-- Instagram Profile -->
+            <a href="https://www.instagram.com/muhammadzainvoice" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="btn-premium w-full flex items-center justify-center px-6 py-4 text-white rounded-full font-semibold text-lg shadow-lg group"
+               style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">
+                <i class="fab fa-instagram mr-4 text-2xl group-hover:scale-110 transition-transform"></i>
+                <span class="flex-1 text-center">Follow on Instagram</span>
+                <i class="fas fa-external-link-alt text-xs opacity-70 ml-4"></i>
+            </a>
+            
+            <!-- TikTok Profile -->
+            <a href="https://www.tiktok.com/@zainsharifabadi" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="btn-premium w-full flex items-center justify-center px-6 py-4 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-lg shadow-lg group">
+                <i class="fab fa-tiktok mr-4 text-2xl group-hover:scale-110 transition-transform"></i>
+                <span class="flex-1 text-center">Follow on TikTok</span>
+                <i class="fas fa-external-link-alt text-xs opacity-70 ml-4"></i>
+            </a>
+            
+            <!-- Gmail Contact - Opens Gmail Compose -->
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadzain70x70@gmail.com" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="btn-premium w-full flex items-center justify-center px-6 py-4 bg-red-500 hover:bg-red-600 text-white rounded-full font-semibold text-lg shadow-lg group">
+                <i class="fas fa-envelope mr-4 text-2xl group-hover:scale-110 transition-transform"></i>
+                <span class="flex-1 text-center">Contact via Gmail</span>
+                <i class="fas fa-external-link-alt text-xs opacity-70 ml-4"></i>
+            </a>
+            
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-center mt-10">
+            <div class="w-16 h-1 bg-gradient-to-r from-transparent via-teal-600 to-transparent mx-auto mb-3 rounded-full"></div>
+            <p class="text-xs text-gray-500 font-medium">© 2025 Zain Voice. All rights reserved.</p>
+        </div>
+        
     </div>
-
 </body>
 </html>
